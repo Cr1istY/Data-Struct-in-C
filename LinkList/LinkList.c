@@ -10,7 +10,7 @@ typedef struct LNode {
 
 }LNode, *LinkList;
 
-//³õÊ¼»¯Ò»¸ö´øÍ·½ÚµãµÄµ¥Á´±í
+//åˆå§‹åŒ–ä¸€ä¸ªå¸¦å¤´èŠ‚ç‚¹çš„å•é“¾è¡¨
 bool InItLinkList(LinkList L)
 {
 	L = (LNode*)malloc(sizeof(LNode));
@@ -58,7 +58,7 @@ typedef struct LNode {
 
 //typedef LNode* LinkList;
 
-//³õÊ¼»¯Ò»¸ö´øÍ·½ÚµãµÄµ¥Á´±í
+//åˆå§‹åŒ–ä¸€ä¸ªå¸¦å¤´èŠ‚ç‚¹çš„å•é“¾è¡¨
 
 bool InItLinkList(LinkList* L)
 {
@@ -78,7 +78,7 @@ bool InItLinkList(LinkList* L)
 
 }
 
-//°´ÕÕÎ»Ğò²åÈë
+//æŒ‰ç…§ä½åºæ’å…¥
 bool ListInsert(LinkList* L)
 {
 	int i = 0;
@@ -87,9 +87,9 @@ bool ListInsert(LinkList* L)
 	LinkList p = (*L);
 	LinkList s;
 
-	printf("ÇëÊäÈëÒª²åÈëµÄÔªËØ\n");
+	printf("è¯·è¾“å…¥è¦æ’å…¥çš„å…ƒç´ \n");
 	scanf_s("%d", &i);
-	printf("ÇëÊäÈëÒª²åÈëÔªËØµÄÎ»Ğò\n");
+	printf("è¯·è¾“å…¥è¦æ’å…¥å…ƒç´ çš„ä½åº\n");
 	scanf_s("%d", &j);
 
 	if (j <= 0)
@@ -106,7 +106,7 @@ bool ListInsert(LinkList* L)
 
 	if (!p || k > j)
 	{
-		printf("²åÈëÊ§°Ü\n");
+		printf("æ’å…¥å¤±è´¥\n");
 		return false;
 	}
 
@@ -119,7 +119,7 @@ bool ListInsert(LinkList* L)
 	return true;
 }
 
-//Õ¹Ê¾Á´±í
+//å±•ç¤ºé“¾è¡¨
 bool ShowList(LinkList* L)
 {
 	LinkList p = (*L)->next;
@@ -134,7 +134,7 @@ bool ShowList(LinkList* L)
 	for (p; p != NULL; p = p->next, j++)
 	{
 
-		printf("µÚ %d µÄÔªËØÎª %d", j, p->data);
+		printf("ç¬¬ %d çš„å…ƒç´ ä¸º %d", j, p->data);
 
 	}
 	return true;
