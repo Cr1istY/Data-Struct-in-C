@@ -4,28 +4,28 @@
 //#include<stdbool.h>
 
 typedef struct {
-    char id[20];    // ±àºÅ
-    char name[50];  // ĞÕÃû
-    char phone[20]; // µç»°ºÅÂë
-    int duration;   // ·şÎñÊ±³¤
+    char id[20];    // ç¼–å·
+    char name[50];  // å§“å
+    char phone[20]; // ç”µè¯å·ç 
+    int duration;   // æœåŠ¡æ—¶é•¿
 } Volunteer;
 
-#define MAX_VOLUNTEERS 100 // ×î¶à10ÃûÖ¾Ô¸Õß
+#define MAX_VOLUNTEERS 100 // æœ€å¤š10åå¿—æ„¿è€…
 Volunteer volunteers[MAX_VOLUNTEERS] = {
-        {"1", "Ğ¡Ò»", "12345678901", 1},
-        {"2", "Ğ¡¶ş", "12345678902", 2},
-        {"3", "Ğ¡Èı", "12345678903", 3},
-        {"4", "Ğ¡ËÄ", "12345678904", 4},
-        {"5", "Ğ¡Îå", "12345678905", 5},
-        {"6", "Ğ¡Áù", "12345678906", 6},
-        {"7", "Ğ¡Æß", "12345678907", 7},
-        {"8", "Ğ¡°Ë", "12345678908", 8},
-        {"9", "Ğ¡¾Å", "12345678909", 9},
-        {"10", "Ğ¡Ê®", "12345678910", 10}
+        {"1", "å°ä¸€", "12345678901", 1},
+        {"2", "å°äºŒ", "12345678902", 2},
+        {"3", "å°ä¸‰", "12345678903", 3},
+        {"4", "å°å››", "12345678904", 4},
+        {"5", "å°äº”", "12345678905", 5},
+        {"6", "å°å…­", "12345678906", 6},
+        {"7", "å°ä¸ƒ", "12345678907", 7},
+        {"8", "å°å…«", "12345678908", 8},
+        {"9", "å°ä¹", "12345678909", 9},
+        {"10", "å°å", "12345678910", 10}
     };
-int count = 10; // µ±Ç°Ö¾Ô¸ÕßÊıÁ¿
+int count = 10; // å½“å‰å¿—æ„¿è€…æ•°é‡
 
-//¼ì²â´íÎó
+//æ£€æµ‹é”™è¯¯
 int WrongTest(char id[20])
 {
 
@@ -45,12 +45,12 @@ int WrongTest(char id[20])
 
 }
 
-//ÌîÈëÖ¾Ô¸Õß
+//å¡«å…¥å¿—æ„¿è€…
 void addVolunteer() 
 {
     if (count >= MAX_VOLUNTEERS) 
     {
-        printf("Ö¾Ô¸ÕßÃû²áÒÑÂú¡£\n");
+        printf("å¿—æ„¿è€…åå†Œå·²æ»¡ã€‚\n");
         return;
     }
 
@@ -58,40 +58,40 @@ void addVolunteer()
     int n;
 
 
-    printf("ÇëÊäÈëÒªÌí¼ÓµÄÖ¾Ô¸ÕßÊıÁ¿£º");
+    printf("è¯·è¾“å…¥è¦æ·»åŠ çš„å¿—æ„¿è€…æ•°é‡ï¼š");
     scanf_s("%d", &n);
     //count = count;
 
     for (int i = 0; i < n; i++) 
     {
 
-        printf("ÇëÊäÈëµÚ%dÎ»Ö¾Ô¸ÕßµÄ±àºÅ¡¢ĞÕÃû¡¢µç»°ºÅÂë£º", i + 1);
+        printf("è¯·è¾“å…¥ç¬¬%dä½å¿—æ„¿è€…çš„ç¼–å·ã€å§“åã€ç”µè¯å·ç ï¼š", i + 1);
         scanf("%s %s %s", &volunteers[count].id, &volunteers[count].name, &volunteers[count].phone);
         
         if (WrongTest(&volunteers[count].id))
         {
-            printf("ÊäÈë±àºÅÏàÍ¬£¬ÇëÖØĞÂÊäÈë¡£\n");
+            printf("è¾“å…¥ç¼–å·ç›¸åŒï¼Œè¯·é‡æ–°è¾“å…¥ã€‚\n");
             return;
         }
         
-        volunteers[count].duration = 0; // ³õÊ¼ÖµÎª0
+        volunteers[count].duration = 0; // åˆå§‹å€¼ä¸º0
         count++;
 
     }
 }
 
-//²åÈëÖ¾Ô¸Õß
+//æ’å…¥å¿—æ„¿è€…
 void insertVolunteer(int position) 
 {
     if (count >= MAX_VOLUNTEERS)
     {
-        printf("Ö¾Ô¸ÕßÃû²áÒÑÂú¡£\n");
+        printf("å¿—æ„¿è€…åå†Œå·²æ»¡ã€‚\n");
         return;
     }
 
     if (position < 0 || position > count) 
     {
-        printf("Î»ÖÃ²»´æÔÚ¡£\n");
+        printf("ä½ç½®ä¸å­˜åœ¨ã€‚\n");
         return;
     }
 
@@ -99,46 +99,46 @@ void insertVolunteer(int position)
     {
         volunteers[i] = volunteers[i - 1];
     }
-    printf("ÇëÊäÈëÖ¾Ô¸ÕßµÄ±àºÅ¡¢ĞÕÃû¡¢µç»°ºÅÂë£º");
+    printf("è¯·è¾“å…¥å¿—æ„¿è€…çš„ç¼–å·ã€å§“åã€ç”µè¯å·ç ï¼š");
     scanf("%s %s %s", &volunteers[position].id, &volunteers[position].name, &volunteers[position].phone);
     if (WrongTest(&volunteers[count].id))
     {
-        printf("ÊäÈë±àºÅÏàÍ¬£¬ÇëÖØĞÂÊäÈë¡£\n");
+        printf("è¾“å…¥ç¼–å·ç›¸åŒï¼Œè¯·é‡æ–°è¾“å…¥ã€‚\n");
         return;
     }
 
-    volunteers[position].duration = 0; // ³õÊ¼ÖµÎª0
+    volunteers[position].duration = 0; // åˆå§‹å€¼ä¸º0
     count++;
 }
 
-//ĞŞ¸ÄÖ¾Ô¸Õß
+//ä¿®æ”¹å¿—æ„¿è€…
 void modifyVolunteer() 
 {
     char id[20];
-    printf("ÇëÊäÈëÒªĞŞ¸ÄµÄÖ¾Ô¸Õß±àºÅ£º");
+    printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å¿—æ„¿è€…ç¼–å·ï¼š");
     getchar();
     gets(id);
     for (int i = 0; i < count; i++) 
     {
         if (!strcmp(id, volunteers[i].id))
         {
-            printf("ÇëÊäÈëĞÂµÄ±àºÅ¡¢ĞÕÃû¡¢µç»°ºÅÂë£º");
+            printf("è¯·è¾“å…¥æ–°çš„ç¼–å·ã€å§“åã€ç”µè¯å·ç ï¼š");
             scanf("%s %s %s", volunteers[i].id, volunteers[i].name, volunteers[i].phone);
-            printf("ÇëÊäÈëĞÂµÄÖ¾Ô¸·şÎñÊ±³¤£º");
+            printf("è¯·è¾“å…¥æ–°çš„å¿—æ„¿æœåŠ¡æ—¶é•¿ï¼š");
             scanf("%d", &volunteers[i].duration);
             return;
         }
     }
-    printf("Î´ÕÒµ½±àºÅÎª%dµÄÖ¾Ô¸Õß¡£\n", id);
+    printf("æœªæ‰¾åˆ°ç¼–å·ä¸º%dçš„å¿—æ„¿è€…ã€‚\n", id);
 }
 
-//É¾³ı
+//åˆ é™¤
 
 void deleteVolunteer() 
 {
     char id[20];
 
-    printf("ÇëÊäÈëÒªÉ¾³ıµÄÖ¾Ô¸Õß±àºÅ£º");
+    printf("è¯·è¾“å…¥è¦åˆ é™¤çš„å¿—æ„¿è€…ç¼–å·ï¼š");
     getchar();
     gets(id);
 
@@ -156,25 +156,25 @@ void deleteVolunteer()
     }
 
 
-    printf("Î´ÕÒµ½±àºÅÎª%sµÄÖ¾Ô¸Õß¡£\n", id);
+    printf("æœªæ‰¾åˆ°ç¼–å·ä¸º%sçš„å¿—æ„¿è€…ã€‚\n", id);
 }
 
 
-//Õ¹Ê¾
+//å±•ç¤º
 
 void printAllVolunteers() 
 {
-    printf("Ö¾Ô¸ÕßÃû²á£º\n");
+    printf("å¿—æ„¿è€…åå†Œï¼š\n");
 
     for (int i = 0; i < count; i++) 
     {
         printf("%s %s %s %d\n", volunteers[i].id, volunteers[i].name, volunteers[i].phone, volunteers[i].duration);
     }
 
-    printf("×ÜÈËÊı£º%d\n", count);
+    printf("æ€»äººæ•°ï¼š%d\n", count);
 }
 
-//°´Ê±³¤ÅÅĞò
+//æŒ‰æ—¶é•¿æ’åº
 
 void sortVolunteersByDuration() 
 {
@@ -191,7 +191,7 @@ void sortVolunteersByDuration()
         }
     }
 
-    printAllVolunteers(); // ´òÓ¡ÅÅĞòºóµÄ½á¹û
+    printAllVolunteers(); // æ‰“å°æ’åºåçš„ç»“æœ
 }
 
 
@@ -200,21 +200,21 @@ void sortVolunteersByDuration()
 int main() {
     int choice;
     while (1) {
-        printf("1. Ìí¼ÓÖ¾Ô¸ÕßĞÅÏ¢\n");
-        printf("2. ²åÈëÖ¾Ô¸ÕßĞÅÏ¢\n");
-        printf("3. ĞŞ¸ÄÖ¾Ô¸ÕßĞÅÏ¢\n");
-        printf("4. É¾³ıÖ¾Ô¸ÕßĞÅÏ¢\n");
-        printf("5. ´òÓ¡ËùÓĞÖ¾Ô¸ÕßĞÅÏ¢\n");
-        printf("6. ¸ù¾İÖ¾Ô¸·şÎñÊ±³¤ÅÅĞò\n");
-        printf("0. ÍË³ö\n");
-        printf("ÇëÑ¡Ôñ²Ù×÷£º");
+        printf("1. æ·»åŠ å¿—æ„¿è€…ä¿¡æ¯\n");
+        printf("2. æ’å…¥å¿—æ„¿è€…ä¿¡æ¯\n");
+        printf("3. ä¿®æ”¹å¿—æ„¿è€…ä¿¡æ¯\n");
+        printf("4. åˆ é™¤å¿—æ„¿è€…ä¿¡æ¯\n");
+        printf("5. æ‰“å°æ‰€æœ‰å¿—æ„¿è€…ä¿¡æ¯\n");
+        printf("6. æ ¹æ®å¿—æ„¿æœåŠ¡æ—¶é•¿æ’åº\n");
+        printf("0. é€€å‡º\n");
+        printf("è¯·é€‰æ‹©æ“ä½œï¼š");
         scanf_s("%d", &choice);
         switch (choice) {
         case 1:
             addVolunteer();
             break;
         case 2:
-            printf("ÇëÊäÈë²åÈëÎ»ÖÃ£º");
+            printf("è¯·è¾“å…¥æ’å…¥ä½ç½®ï¼š");
             int position;
             scanf_s("%d", &position);
             insertVolunteer(position);
@@ -234,7 +234,7 @@ int main() {
         case 0:
             return 0;
         default:
-            printf("ÎŞĞ§µÄÑ¡Ôñ¡£\n");
+            printf("æ— æ•ˆçš„é€‰æ‹©ã€‚\n");
         }
     }
     return 0;
